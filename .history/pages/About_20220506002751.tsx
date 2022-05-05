@@ -13,6 +13,18 @@ interface Props{
 
 
 function About({books}:Props) {
+
+function truncateString() {
+    books.map(book => {
+    if(book.description.length > 100){
+      return book.description.slice(0, 25) + '...';
+    }else{
+      return book.description
+    }
+
+     });
+    }
+
   return (
     <div>
       <Head>
@@ -29,7 +41,7 @@ function About({books}:Props) {
             </div>
           </div>
           {/*right */}
-          <div className=" flex flex-col">
+          <div className=" flex flex-col  ">
             <h2 className="text-3xl font-light text-gray-800 ">
               About Me
             </h2>
@@ -48,7 +60,7 @@ function About({books}:Props) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 p-2 md:p-6 ">
           {books.map((book) => ( 
             <Link key={book._id} href={`/book/${book.slug.current}`}>
-              <div className="group border overflow-hidden shadow-lg my-4 w-5/6 lg:w-full md:w-full sm:w-full mx-auto">
+              <div className="group border overflow-hidden shadow-lg my-4">
                 <img className="lg:h-80 md:h-80 sm:h-80  w-full group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(book.mainImage).url()!} alt={book.title} />
                 <div className="flex justify-between lg:justify-evenly px-2">
                   <div className="py-4 ">

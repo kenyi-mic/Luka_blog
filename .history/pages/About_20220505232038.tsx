@@ -13,6 +13,7 @@ interface Props{
 
 
 function About({books}:Props) {
+  
   return (
     <div>
       <Head>
@@ -29,7 +30,7 @@ function About({books}:Props) {
             </div>
           </div>
           {/*right */}
-          <div className=" flex flex-col">
+          <div className=" flex flex-col  ">
             <h2 className="text-3xl font-light text-gray-800 ">
               About Me
             </h2>
@@ -45,17 +46,17 @@ function About({books}:Props) {
         <h1 className="text-center text-4xl  underline py-5 font-bold text-gray-500 hover:text-gray-900">The Books I Read</h1>
         {/*Books */}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 p-2 md:p-6 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 p-2 md:p-6">
           {books.map((book) => ( 
             <Link key={book._id} href={`/book/${book.slug.current}`}>
-              <div className="group border overflow-hidden shadow-lg my-4 w-5/6 lg:w-full md:w-full sm:w-full mx-auto">
-                <img className="lg:h-80 md:h-80 sm:h-80  w-full group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(book.mainImage).url()!} alt={book.title} />
-                <div className="flex justify-between lg:justify-evenly px-2">
-                  <div className="py-4 ">
-                    <p className="font-medium text-indigo-600">{book.title}</p>
-                    <p className="text-sm font-extralight text-gray-600 mb-3">{book.description.length > 50 ? book.description.slice(0, 40) + '...' : book.description }</p>
-                    <Link href={book.url} >
-                    <p className="hover:text-yellow-600 text-indigo-500 bg-gray-200 hover:bg-gray-400 w-20 px-2 py-1 rounded-full">{book.link}</p>
+              <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                <img className="w-full group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(book.mainImage).url()!} alt={book.title} />
+                <div className="flex flex-col-1 justify-between p-2">
+                  <div className="px-6 py-4">
+                    <p className="font-bold text-xl mb-2">{book.title}</p>
+                    <p className="font-extralight text-sm">{book.description}</p>
+                    <Link href={book.url}>
+                    <p className="font-bold text-blue-700 bg-gray-200 rounded-full">{book.link}</p>
                     </Link>
                    
                   </div>

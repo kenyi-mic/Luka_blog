@@ -13,6 +13,18 @@ interface Props{
 
 
 function About({books}:Props) {
+
+function truncateString() {
+    books.map(book => {
+    if(book.description.length > 100){
+      return book.description.slice(0, 25) + '...';
+    }else{
+      return book.description
+    }
+
+     });
+    }
+
   return (
     <div>
       <Head>

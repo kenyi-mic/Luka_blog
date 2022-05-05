@@ -26,7 +26,7 @@ function books({books}: Props) {
                 <div className="flex justify-between lg:justify-evenly px-2">
                   <div className="py-4">
                     <p className="font-medium text-indigo-600">{book.title}</p>
-                    <p className="text-sm font-extralight text-gray-600 mb-3">{book.description.length > 50 ? book.description.slice(0, 40) + '...' : book.description}</p>
+                    <p className="text-sm font-extralight text-gray-600 mb-3">{book.description}</p>
                     <Link href={book.url}>
                     <p className="hover:text-yellow-600 text-indigo-500 bg-gray-200 hover:bg-gray-400 w-20 px-2 py-1 rounded-full">{book.link}</p>
                     </Link>
