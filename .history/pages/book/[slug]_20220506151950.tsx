@@ -31,31 +31,20 @@ function Book({ book }: Props) {
         {/*main page */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {/*left */}
-          <div className="mx-5 my-10  w-5/6  m-auto">
+          <div>
             <img
               title={book.description}
-              className=" w-full  m-auto"
+              className="w-52 h-80"
               src={urlFor(book.mainImage).url()!}
               alt={book.title}
             />
-            <div className="py-5">
-              <p className="text-2xl ">{book.title}</p>
-              <p>
-                <i>{book.description}</i>
-              </p>
-              <Link href={book.url}>
-                <p className="my-5 w-full m-auto text-amber-700">
-                  {" "}
-                  Buy now on{" "}
-                  <span className="text-blue-900 cursor-pointer hover:text-indigo-600">
-                    {book.link}
-                  </span>
-                </p>
-              </Link>
-            </div>
+            <p>{book.title}</p>
+            <Link href={book.url}>
+              <span>Buy now on {book.link}</span>
+            </Link>
           </div>
           <div>
-            <div className="my-10 mx-5">
+            <div className="mt-10">
               <PortableText
                 className=""
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
@@ -81,7 +70,7 @@ function Book({ book }: Props) {
             </div>
           </div>
           {/* Author details */}
-          <div className="my-10 mx-5 border p-3 ">
+          <div>
             {/* Author's image and name */}
             <div className="flex">
               <img
@@ -89,10 +78,10 @@ function Book({ book }: Props) {
                 src={urlFor(book.author.image).url()!}
                 alt={book.title}
               />
-              <p className="text-amber-400 mt-4 mx-2">{book.author.name}</p>
+              <p className="text-amber-400 mt-10">{book.author.name}</p>
             </div>
 
-            <div className="my-5">
+            <div>
               <PortableText
                 className=""
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
@@ -109,11 +98,7 @@ function Book({ book }: Props) {
                     <li className="ml-4 list-disc ">{children}</li>
                   ),
                   link: ({ href, children }: any) => (
-                    <a
-                      href={href}
-                      target="_blank"
-                      className="text-amber-700 hover:underline"
-                    >
+                    <a href={href} className="text-amber-700 hover:underline">
                       {children}
                     </a>
                   ),

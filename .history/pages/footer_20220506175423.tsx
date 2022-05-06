@@ -12,7 +12,7 @@ function footer() {
   return (
     <div className="bg-blue-900">
       <hr className="w-full h-2 bg-gradient-to-tr from-indigo-600 to-pink-700" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-6 m-10 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-6 my-10 md:grid-cols-3 lg:grid-cols-4 ">
         {/* first*/}
         <div className="text-center">
           <img className="w-44 m-auto" src="/logo.png" alt="logo" />

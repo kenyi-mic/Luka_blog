@@ -12,7 +12,7 @@ function footer() {
   return (
     <div className="bg-blue-900">
       <hr className="w-full h-2 bg-gradient-to-tr from-indigo-600 to-pink-700" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-6 m-10 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-6 my-10 md:grid-cols-3 lg:grid-cols-4 ">
         {/* first*/}
         <div className="text-center">
           <img className="w-44 m-auto" src="/logo.png" alt="logo" />
@@ -21,7 +21,7 @@ function footer() {
           </p>
         </div>
         {/* second*/}
-        <div className=" text-gray-400 w-80 mx-auto">
+        <div className=" text-gray-400 w-80 m-auto">
           <h2 className="text-2xl font-bold  text-gray-200 ">Our Services</h2>
           <h4 className="hover:text-amber-600 hover:underline cursor-pointer">
             Blog
@@ -40,7 +40,7 @@ function footer() {
           </h4>
         </div>
         {/* third*/}
-        <div className=" text-gray-400  w-80 mx-auto">
+        <div className=" text-gray-400 ">
           <h2 className="text-2xl font-bold text-gray-200">Social Network</h2>
           <Link href="https://www.facebook.com/" passHref>
             <a target="_blank">
@@ -114,7 +114,7 @@ function footer() {
         </div>
 
         {/* fourth*/}
-        <div className=" text-gray-400 w-80 mx-auto">
+        <div className=" text-gray-400 ">
           <h2 className="text-2xl font-bold  text-gray-200">Contact Us </h2>
           <h4>
             <EmailIcon className="mr-1 text-red-500 " />

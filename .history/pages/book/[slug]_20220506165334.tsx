@@ -38,21 +38,13 @@ function Book({ book }: Props) {
               src={urlFor(book.mainImage).url()!}
               alt={book.title}
             />
-            <div className="py-5">
-              <p className="text-2xl ">{book.title}</p>
-              <p>
-                <i>{book.description}</i>
+            <p className="text-center">{book.title}</p>
+            <Link href={book.url}>
+              <p className="w-full m-auto">
+                {" "}
+                Buy now on <span className="">{book.link}</span>
               </p>
-              <Link href={book.url}>
-                <p className="my-5 w-full m-auto text-amber-700">
-                  {" "}
-                  Buy now on{" "}
-                  <span className="text-blue-900 cursor-pointer hover:text-indigo-600">
-                    {book.link}
-                  </span>
-                </p>
-              </Link>
-            </div>
+            </Link>
           </div>
           <div>
             <div className="my-10 mx-5">
@@ -109,11 +101,7 @@ function Book({ book }: Props) {
                     <li className="ml-4 list-disc ">{children}</li>
                   ),
                   link: ({ href, children }: any) => (
-                    <a
-                      href={href}
-                      target="_blank"
-                      className="text-amber-700 hover:underline"
-                    >
+                    <a href={href} className="text-amber-700 hover:underline">
                       {children}
                     </a>
                   ),

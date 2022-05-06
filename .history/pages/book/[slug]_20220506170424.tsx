@@ -109,11 +109,7 @@ function Book({ book }: Props) {
                     <li className="ml-4 list-disc ">{children}</li>
                   ),
                   link: ({ href, children }: any) => (
-                    <a
-                      href={href}
-                      target="_blank"
-                      className="text-amber-700 hover:underline"
-                    >
+                    <a href={href} className="text-amber-700 hover:underline">
                       {children}
                     </a>
                   ),
