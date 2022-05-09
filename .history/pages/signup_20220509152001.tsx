@@ -8,7 +8,8 @@ function signup() {
       <hr />
       <main className="grid grid-rows-3">
         <h5 className="flex justify-center items-center text-2xl font-light mt-20">
-          Sign up page is coming soon...
+          Sign up page
+          <span className="text-red-500">is coming soon</span>
         </h5>
       </main>
     </div>
