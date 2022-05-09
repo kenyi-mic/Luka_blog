@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import { Link } from '../../components'
 import { Layout } from '../../components/account'
 import { userService, alertService } from '../../services'
-
+import Head from 'next/head'
 
 export default Login
 
@@ -37,8 +37,10 @@ function Login() {
 
   return (
     <main>
-      
       <Layout>
+        <Head>
+          <title>Sign In Page</title>
+        </Head>
         <div className="card mx-auto my-10 grid w-5/6 grid-cols-1 gap-3 sm:w-4/5 md:w-2/3 lg:w-2/4 lg:gap-6">
           <h4 className="card-header text-center text-2xl font-semibold text-gray-700">
             SigIn
