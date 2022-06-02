@@ -45,7 +45,7 @@ function Post({post}:Props) {
   return (
     <main>
         <Header/>
-        <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt={post.title}   />
+        <Image className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt={post.title} width="100%" height="10rem" />
         <article className="max-w-3xl mx-auto p-5">
         <h1 className="text-3xl  mb-3">
             {post.title}

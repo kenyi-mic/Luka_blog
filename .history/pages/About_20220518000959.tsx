@@ -7,7 +7,6 @@ import React from 'react'
 import Header from '../components/Header'
 import { sanityClient, urlFor } from '../sanity'
 import { Book } from '../typings'
-import Luka from '../public/image/luka.jpg'
 
 interface Props{ 
   books:[Book]
@@ -27,7 +26,7 @@ function About({books}:Props) {
           {/*left */}
           <div className="flex flex-col items-center justify-center max-w-full">
           <div>
-            <Image priority className="rounded w-80" src={Luka} alt="Luka" />
+            <img className="rounded w-80" src="luka.jpg" alt="Luka" />
             </div>
           </div>
           {/*right */}
@@ -63,7 +62,7 @@ function About({books}:Props) {
                   </div>
                   <div className="flex flex-col-1 my-4">
                   
-                  <img className="w-10 h-10 rounded-full " src={urlFor(book.author.image).url()!} alt={book.author.name} />
+                  <Image className="w-10 h-10 rounded-full " src={urlFor(book.author.image).url()!} alt={book.author.name} />
                   
                   </div>
                   

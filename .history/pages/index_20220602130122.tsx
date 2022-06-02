@@ -20,7 +20,7 @@ export default function Home({ posts }: Props) {
         <Header />
 
         {/* Main page*/}
-        <div className="flex justify-between items-center bg-gradient-to-br from-blue-700 to-purple-700 border-y border-black py-10  ">
+        <div className="flex justify-between items-center bg-gradient-to-br from-amber-600 to-yellow-500 border-y border-black py-10  ">
           {/*left*/}
           <div className="px-10 space-y-5">
             <h1 className="text-6xl  max-w-xl font-semibold">
@@ -34,7 +34,7 @@ export default function Home({ posts }: Props) {
               people?
             </h2>
             <Link href="./account/register">
-              <button className="text-xl font-bold  bg-gradient-to-br from-amber-600 to-yellow-500 items-center justify py-2 px-4 rounded-full cursor-pointer my-10 text-white  hover:text-gray-400">
+              <button className="text-xl font-bold  bg-gradient-to-br from-amber-600 to-yellow-500 items-center justify py-2 px-4 rounded-full cursor-pointer my-10 text-white dark:text-indigo-300 hover:text-gray-400">
                 Sign up
               </button>
             </Link>

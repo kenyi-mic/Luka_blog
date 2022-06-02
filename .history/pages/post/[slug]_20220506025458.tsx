@@ -5,7 +5,6 @@ import {Post} from "../../typings"
 import PortableText from "react-portable-text"
 import {useForm, SubmitHandler} from "react-hook-form"
 import { useState } from "react";
-import Image from "next/image";
 interface IFormInput{
     _id: string;
     name: string;
@@ -45,7 +44,7 @@ function Post({post}:Props) {
   return (
     <main>
         <Header/>
-        <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt={post.title}   />
+        <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt={post.title} />
         <article className="max-w-3xl mx-auto p-5">
         <h1 className="text-3xl  mb-3">
             {post.title}
@@ -53,7 +52,7 @@ function Post({post}:Props) {
         <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
        
        <div className="flex items-center space-x-2 ">
-           <Image className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt={post.author.name} height="2.5rem" width="2.5rem" />
+           <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt={post.author.name} />
        
           <p className="font-extralight text-sm">
             Blog post by <span className="text-amber-600">{post.author.name}</span>  - Published at {new Date(post._createdAt).toLocaleString()}

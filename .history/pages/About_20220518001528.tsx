@@ -27,7 +27,7 @@ function About({books}:Props) {
           {/*left */}
           <div className="flex flex-col items-center justify-center max-w-full">
           <div>
-            <Image priority className="rounded w-80" src={Luka} alt="Luka" />
+            <Image className="rounded w-80" src={Luka} alt="Luka" />
             </div>
           </div>
           {/*right */}
