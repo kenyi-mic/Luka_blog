@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { login } from "../../services/auth.service";
 import { RouteComponentProps } from "react-router-dom";
 import Header from "../../components/Header";
-import Link from "next/link";
 interface RouterProps {
   history: string;
 }
@@ -78,14 +77,14 @@ const Login: React.FC<Props> = ({ history }) => {
                 className="alert alert-danger text-red-600 text-xs font-light"
               />
             </div>
-            <div className="form-group flex  gap-5">
+            <div className="form-group flex justify-center gap-3 align-middle">
               <button type="submit" className="btn btn-primary btn-block text-xl text-slate-50 bg-amber-600 px-3 pb-1  rounded-lg border border-emerald-700 bg-amber mt-6" disabled={loading}>
                 {loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
                 <span className="">Login</span>
               </button>
-              <p className="mt-6">Don't have account? <Link href="/account/register"><span className="text-blue-500 font-bold text-lg cursor-pointer">Sign Up</span></Link></p>
+              <p>Don't have account? <span className="text-blue-500 font-bold text-xl cursor-pointer">Sign Up</span></p>
             </div>
             {message && (
               <div className="form-group">

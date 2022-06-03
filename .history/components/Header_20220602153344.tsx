@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <div className="bg-gray-50 w-screen m-auto sticky top-0 z-10">
+    <div className="bg-gray-50 w-screen m-auto">
       <header className="flex justify-between px-5 max-w-7xl mx-auto">
         <div className="flex items-center space-x-5">
           <Link href="/">

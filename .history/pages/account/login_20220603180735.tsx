@@ -3,8 +3,6 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { login } from "../../services/auth.service";
 import { RouteComponentProps } from "react-router-dom";
-import Header from "../../components/Header";
-import Link from "next/link";
 interface RouterProps {
   history: string;
 }
@@ -45,14 +43,12 @@ const Login: React.FC<Props> = ({ history }) => {
     );
   };
   return (
-    <>
-    <Header/>
-    <div className="col-md-12 flex justify-center align-middle w-full py-12 mx-auto ">
-      <div className="card card-container shadow-lg w-2/5 mx-auto  p-12 bg-slate-100 ">
+    <div className="col-md-12 flex justify-center align-middle w-4/5 py-12 mx-auto ">
+      <div className="card card-container">
         <img
           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
           alt="profile-img"
-          className="profile-img-card w-14 h-14 rounded-full"
+          className="profile-img-card"
         />
         <Formik
           initialValues={initialValues}
@@ -61,35 +57,34 @@ const Login: React.FC<Props> = ({ history }) => {
         >
           <Form>
             <div className="form-group">
-              <label htmlFor="username" className="block text-xl text-slate-600">Username</label>
-              <Field name="username" type="text" className="form-control w-full h-10 outline-none text-lg" />
+              <label htmlFor="username">Username</label>
+              <Field name="username" type="text" className="form-control" />
               <ErrorMessage
                 name="username"
                 component="div"
-                className="alert alert-danger text-red-600 text-xs font-light"
+                className="alert alert-danger"
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password" className="block text-xl text-slate-600">Password</label>
-              <Field name="password" type="password" className="form-control w-full h-10 outline-none text-lg" />
+              <label htmlFor="password">Password</label>
+              <Field name="password" type="password" className="form-control" />
               <ErrorMessage
                 name="password"
                 component="div"
-                className="alert alert-danger text-red-600 text-xs font-light"
+                className="alert alert-danger"
               />
             </div>
-            <div className="form-group flex  gap-5">
-              <button type="submit" className="btn btn-primary btn-block text-xl text-slate-50 bg-amber-600 px-3 pb-1  rounded-lg border border-emerald-700 bg-amber mt-6" disabled={loading}>
+            <div className="form-group">
+              <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
                 {loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                <span className="">Login</span>
+                <span>Login</span>
               </button>
-              <p className="mt-6">Don't have account? <Link href="/account/register"><span className="text-blue-500 font-bold text-lg cursor-pointer">Sign Up</span></Link></p>
             </div>
             {message && (
               <div className="form-group">
-                <div className="alert alert-danger text-red-500 text-xs" role="alert">
+                <div className="alert alert-danger" role="alert">
                   {message}
                 </div>
               </div>
@@ -97,8 +92,7 @@ const Login: React.FC<Props> = ({ history }) => {
           </Form>
         </Formik>
       </div>
-    </div></>
-    
+    </div>
   );
 };
 export default Login;

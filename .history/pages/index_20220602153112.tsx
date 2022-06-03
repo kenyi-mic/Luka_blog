@@ -11,14 +11,13 @@ interface Props {
 export default function Home({ posts }: Props) {
   return (
     <div className="bg-gray-300">
-      <Head>
+      <div className="max-w-7xl mx-auto">
+        <Head>
           <title>Luka Garang | BLOG</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
         <Header />
-      <div className="max-w-7xl mx-auto">
-        
 
         {/* Main page*/}
         <div className="flex justify-between items-center bg-gradient-to-br from-blue-700 to-purple-700 border-y border-black py-10  ">

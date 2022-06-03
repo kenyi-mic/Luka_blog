@@ -85,7 +85,7 @@ const Login: React.FC<Props> = ({ history }) => {
                 )}
                 <span className="">Login</span>
               </button>
-              <p className="mt-6">Don't have account? <Link href="/account/register"><span className="text-blue-500 font-bold text-lg cursor-pointer">Sign Up</span></Link></p>
+              <p className="mt-6">Don't have account? <Link href="/account/register"><span className="text-blue-500 font-bold text-xl cursor-pointer">Sign Up</span></Link></p>
             </div>
             {message && (
               <div className="form-group">

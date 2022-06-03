@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div >
+    <div className="bg-gray-300">
       <Component {...pageProps} />
       <Footer/>
     </div>

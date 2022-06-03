@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { login } from "../../services/auth.service";
 import { RouteComponentProps } from "react-router-dom";
 import Header from "../../components/Header";
-import Link from "next/link";
 interface RouterProps {
   history: string;
 }
@@ -85,7 +84,7 @@ const Login: React.FC<Props> = ({ history }) => {
                 )}
                 <span className="">Login</span>
               </button>
-              <p className="mt-6">Don't have account? <Link href="/account/register"><span className="text-blue-500 font-bold text-lg cursor-pointer">Sign Up</span></Link></p>
+              <p>Don't have account? <span className="text-blue-500 font-bold text-xl cursor-pointer">Sign Up</span></p>
             </div>
             {message && (
               <div className="form-group">

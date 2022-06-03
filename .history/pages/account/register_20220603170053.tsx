@@ -4,8 +4,6 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import IUser from "../../types/user.types";
 import { register } from "../../services/auth.service";
-import Header from "../../components/Header";
-import Link from "next/link";
 const Register: React.FC = () => {
   const [successful, setSuccessful] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
@@ -59,10 +57,8 @@ const Register: React.FC = () => {
     );
   };
   return (
-    <>
-    <Header/>
-    <div className="col-md-12 flex justify-center align-middle w-full py-12 mx-auto">
-      <div className="card card-container shadow-lg w-2/5 mx-auto  p-12 bg-slate-100">
+    <div className="col-md-12 shadow-lg w-2/3 m-auto">
+      <div className="card card-container">
         <img 
           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
           alt="profile-img"
@@ -77,40 +73,38 @@ const Register: React.FC = () => {
             {!successful && (
               <div className="">
                 <div className="form-group ">
-                  <label htmlFor="username " className="block text-xl text-slate-600"> Username </label>
-                  <Field name="username" type="text" className="form-control w-full h-10 outline-none text-lg" />
-                  <ErrorMessage 
+                  <label htmlFor="username " className="block text-xl"> Username </label>
+                  <Field name="username" type="text" className="form-control" />
+                  <ErrorMessage
                     name="username"
                     component="div"
-                    className="alert alert-danger text-red-600 text-xs font-light"
+                    className="alert alert-danger"
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email" className="block text-xl text-slate-600"> Email </label>
-                  <Field name="email" type="email" className="form-control w-full h-10 outline-none text-lg" />
+                  <label htmlFor="email"> Email </label>
+                  <Field name="email" type="email" className="form-control" />
                   <ErrorMessage
                     name="email"
                     component="div"
-                    className="alert alert-danger text-red-600 text-xs font-light"
+                    className="alert alert-danger"
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="password" className="block text-xl text-slate-600"> Password </label>
+                  <label htmlFor="password"> Password </label>
                   <Field
                     name="password"
                     type="password"
-                    className="form-control w-full h-10 outline-none text-lg"
+                    className="form-control"
                   />
                   <ErrorMessage
                     name="password"
                     component="div"
-                    className="alert alert-danger text-red-600 text-xs font-light"
+                    className="alert alert-danger"
                   />
                 </div>
-                <div className="form-group flex gap-5">
-                  <button type="submit" className="btn btn-primary btn-block text-xl text-slate-50 bg-amber-600 px-3 py-1 my-4  rounded-lg border border-emerald-700 bg-amber ">Sign Up</button>
-                  <p className="my-4">Have Account already? <Link href="/account/login"><span className="text-indigo-600 text-lg cursor-pointer font-bold">Sign In</span>
-                  </Link></p>
+                <div className="form-group">
+                  <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                 </div>
               </div>
             )}
@@ -129,7 +123,7 @@ const Register: React.FC = () => {
           </Form>
         </Formik>
       </div>
-    </div></>
+    </div>
   );
 };
 export default Register;
