@@ -5,7 +5,6 @@ import { login } from "../../services/auth.service";
 import { RouteComponentProps } from "react-router-dom";
 import Header from "../../components/Header";
 import Link from "next/link";
-import Router from "next/router";
 interface RouterProps {
   history: string;
 }
@@ -30,10 +29,10 @@ const Login: React.FC<Props> = ({ history }) => {
     setLoading(true);
     login(username, password).then(
       () => {
-        Router.push("/account/profile");
+        history.push("/profile");
         window.location.reload();
       },
-      (error: any) => {
+      (error) => {
         const resMessage =
           (error.response &&
             error.response.data &&
@@ -49,7 +48,7 @@ const Login: React.FC<Props> = ({ history }) => {
     <>
       <Header />
       <div className="col-md-12 flex justify-center align-middle w-full py-12 mx-auto ">
-        <div className="card card-container shadow-lg col-sm-8 min-w-screen-sm mx-auto  p-12 bg-slate-100 ">
+        <div className="card card-container shadow-lg w-2/5 mx-auto  p-12 bg-slate-100 ">
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"

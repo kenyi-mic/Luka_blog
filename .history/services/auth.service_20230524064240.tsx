@@ -3,17 +3,11 @@ import { NextPageContext } from "next";
 
 const API_URL = "http://localhost:8080/users/";
 
-export const register = (
-  username: string,
-  email: string,
-  password: string,
-  confirm_password: string
-) => {
+export const register = (username: string, email: string, password: string) => {
   return axios.post(API_URL + "signup", {
     username,
     email,
     password,
-    confirm_password,
   });
 };
 

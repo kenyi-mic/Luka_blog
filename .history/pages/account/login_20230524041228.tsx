@@ -5,7 +5,6 @@ import { login } from "../../services/auth.service";
 import { RouteComponentProps } from "react-router-dom";
 import Header from "../../components/Header";
 import Link from "next/link";
-import Router from "next/router";
 interface RouterProps {
   history: string;
 }
@@ -30,10 +29,10 @@ const Login: React.FC<Props> = ({ history }) => {
     setLoading(true);
     login(username, password).then(
       () => {
-        Router.push("/account/profile");
+        history.push("/profile");
         window.location.reload();
       },
-      (error: any) => {
+      (error) => {
         const resMessage =
           (error.response &&
             error.response.data &&

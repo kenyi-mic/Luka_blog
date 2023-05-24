@@ -5,18 +5,14 @@ import IUser from "../../types/user.types";
 import { register } from "../../services/auth.service";
 import Header from "../../components/Header";
 import Link from "next/link";
-
 const Register: React.FC = () => {
   const [successful, setSuccessful] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
-
   const initialValues: IUser = {
     username: "",
     email: "",
     password: "",
-    confirm_password: "",
   };
-
   const validationSchema = Yup.object().shape({
     username: Yup.string()
       .test(
@@ -37,24 +33,15 @@ const Register: React.FC = () => {
           val && val.toString().length >= 6 && val.toString().length <= 40
       )
       .required("This field is required!"),
-    confirm_password: Yup.string()
-      .test(
-        "len",
-        "The password must be between 6 and 40 characters.",
-        (val: any) =>
-          val && val.toString().length >= 6 && val.toString().length <= 40
-      )
-      .required("This field is required!"),
   });
-
   const handleRegister = (formValue: IUser) => {
-    const { username, email, password, confirm_password } = formValue;
-    register(username, email, password, confirm_password).then(
-      (response: any) => {
+    const { username, email, password } = formValue;
+    register(username, email, password).then(
+      (response) => {
         setMessage(response.data.message);
         setSuccessful(true);
       },
-      (error: any) => {
+      (error) => {
         const resMessage =
           (error.response &&
             error.response.data &&
@@ -66,7 +53,6 @@ const Register: React.FC = () => {
       }
     );
   };
-
   return (
     <>
       <Header />
@@ -123,7 +109,7 @@ const Register: React.FC = () => {
                       className="alert alert-danger text-red-600 text-xs font-light"
                     />
                   </div>
-                  <div className="form">
+                  <div className="form-group">
                     <label
                       htmlFor="password"
                       className="block text-xl text-slate-600"
@@ -138,25 +124,6 @@ const Register: React.FC = () => {
                     />
                     <ErrorMessage
                       name="password"
-                      component="div"
-                      className="alert alert-danger text-red-600 text-xs font-light"
-                    />
-                  </div>
-                  <div className="form">
-                    <label
-                      htmlFor="confirm_password"
-                      className="block text-xl text-slate-600"
-                    >
-                      {" "}
-                      Confirm Password{" "}
-                    </label>
-                    <Field
-                      name="confirm_password"
-                      type="password"
-                      className="form-control w-full h-10 outline-none text-lg"
-                    />
-                    <ErrorMessage
-                      name="confirm_password"
                       component="div"
                       className="alert alert-danger text-red-600 text-xs font-light"
                     />

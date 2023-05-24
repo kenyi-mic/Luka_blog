@@ -148,7 +148,7 @@ const Register: React.FC = () => {
                       className="block text-xl text-slate-600"
                     >
                       {" "}
-                      Confirm Password{" "}
+                      COnfirm Password{" "}
                     </label>
                     <Field
                       name="confirm_password"

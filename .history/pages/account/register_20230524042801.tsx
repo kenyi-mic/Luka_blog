@@ -14,7 +14,6 @@ const Register: React.FC = () => {
     username: "",
     email: "",
     password: "",
-    confirm_password: "",
   };
 
   const validationSchema = Yup.object().shape({
@@ -37,19 +36,11 @@ const Register: React.FC = () => {
           val && val.toString().length >= 6 && val.toString().length <= 40
       )
       .required("This field is required!"),
-    confirm_password: Yup.string()
-      .test(
-        "len",
-        "The password must be between 6 and 40 characters.",
-        (val: any) =>
-          val && val.toString().length >= 6 && val.toString().length <= 40
-      )
-      .required("This field is required!"),
   });
 
   const handleRegister = (formValue: IUser) => {
-    const { username, email, password, confirm_password } = formValue;
-    register(username, email, password, confirm_password).then(
+    const { username, email, password } = formValue;
+    register(username, email, password).then(
       (response: any) => {
         setMessage(response.data.message);
         setSuccessful(true);
@@ -138,25 +129,6 @@ const Register: React.FC = () => {
                     />
                     <ErrorMessage
                       name="password"
-                      component="div"
-                      className="alert alert-danger text-red-600 text-xs font-light"
-                    />
-                  </div>
-                  <div className="form">
-                    <label
-                      htmlFor="confirm_password"
-                      className="block text-xl text-slate-600"
-                    >
-                      {" "}
-                      Confirm Password{" "}
-                    </label>
-                    <Field
-                      name="confirm_password"
-                      type="password"
-                      className="form-control w-full h-10 outline-none text-lg"
-                    />
-                    <ErrorMessage
-                      name="confirm_password"
                       component="div"
                       className="alert alert-danger text-red-600 text-xs font-light"
                     />
