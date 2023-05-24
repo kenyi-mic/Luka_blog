@@ -2,12 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { getCurrentUser, logout } from "../services/auth.service";
 
-interface HeaderProps {
-  user: any;
-}
-
-function Header({ user }: HeaderProps) {
-  const currentUser = localStorage.user;
+function Header() {
+  const currentUser = getCurrentUser;
   const isSignedIn = !!currentUser;
 
   return (

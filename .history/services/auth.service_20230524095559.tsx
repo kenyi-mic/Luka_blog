@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NextPageContext } from "next";
 
-const API_URL = "https://blog-api-whsn.onrender.com/users/";
+const API_URL = "http://localhost:8080/users/";
 
 export const register = (
   username: string,
@@ -41,6 +41,7 @@ export const logout = () => {
 export const getCurrentUser = (ctx?: NextPageContext) => {
   if (typeof window !== "undefined") {
     const userStr = localStorage.getItem("user");
+    console.log(userStr);
     if (userStr) return JSON.parse(userStr);
   } else if (ctx?.req?.headers?.cookie) {
     // Handle server-side rendering

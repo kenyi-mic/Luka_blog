@@ -90,7 +90,7 @@ const Login: React.FC<Props> = ({ history }) => {
                 <Field
                   name="password"
                   type="password"
-                  className="form-control w-full h-10 outline-none text-lg px-2"
+                  className="form-control w-full h-10 outline-none text-lg"
                 />
                 <ErrorMessage
                   name="password"

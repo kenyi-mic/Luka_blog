@@ -4,13 +4,11 @@ import Header from "../components/Header";
 import { Post } from "../typings";
 import Link from "next/link";
 import Image from "next/image";
-import { getCurrentUser } from "../services/auth.service";
 
 interface Props {
   posts: [Post];
 }
 export default function Home({ posts }: Props) {
-  const currentUser = getCurrentUser;
   return (
     <div className="bg-gray-300">
       <Head>
@@ -18,7 +16,7 @@ export default function Home({ posts }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header user={currentUser} />
+      <Header />
       <div className="max-w-7xl mx-auto">
         {/* Main page*/}
         <div className="flex justify-between items-center bg-gradient-to-br from-blue-700 to-purple-700 border-y border-black py-10  ">
@@ -44,7 +42,7 @@ export default function Home({ posts }: Props) {
 
           <img
             className="hidden md:inline-flex h-32 lg:full mr-6"
-            src="/image/logo.png"
+            src="/logo.png"
             alt="logo"
           />
         </div>

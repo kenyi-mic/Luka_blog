@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 function Header({ user }: HeaderProps) {
-  const currentUser = localStorage.user;
+  const currentUser = user;
   const isSignedIn = !!currentUser;
 
   return (

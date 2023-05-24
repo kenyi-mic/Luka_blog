@@ -2,12 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { getCurrentUser, logout } from "../services/auth.service";
 
-interface HeaderProps {
-  user: any;
-}
-
-function Header({ user }: HeaderProps) {
-  const currentUser = localStorage.user;
+function Header() {
+  const currentUser = localStorage?.user;
   const isSignedIn = !!currentUser;
 
   return (
@@ -36,11 +32,9 @@ function Header({ user }: HeaderProps) {
         </div>
         <div className=" flex md:inline-flex items-center  space-x-5 text-amber-600 ">
           {isSignedIn ? (
-            <Link href="/">
-              <a onClick={() => logout()} className="cursor-pointer">
-                Sign out
-              </a>
-            </Link>
+            <a onClick={() => logout()} className="cursor-pointer">
+              Sign out
+            </a>
           ) : (
             <Link href="/account/login">
               <a className="cursor-pointer">Sign In</a>

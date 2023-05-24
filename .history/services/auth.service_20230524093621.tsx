@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NextPageContext } from "next";
 
-const API_URL = "https://blog-api-whsn.onrender.com/users/";
+const API_URL = "http://localhost:8080/users/";
 
 export const register = (
   username: string,
@@ -26,7 +26,6 @@ export const login = (username: string, password: string) => {
     .then((response: any) => {
       if (typeof window !== "undefined" && response.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
-        console.log(response.data.result);
       }
       return response.data;
     });

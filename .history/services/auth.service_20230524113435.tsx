@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NextPageContext } from "next";
 
-const API_URL = "https://blog-api-whsn.onrender.com/users/";
+const API_URL = "http://localhost:8080/users/";
 
 export const register = (
   username: string,

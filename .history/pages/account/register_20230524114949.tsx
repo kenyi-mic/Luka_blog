@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import IUser from "../../types/user.types";
-import { getCurrentUser, register } from "../../services/auth.service";
+import { register } from "../../services/auth.service";
 import Header from "../../components/Header";
 import Link from "next/link";
 
 const Register: React.FC = () => {
-  const currentUser = getCurrentUser;
   const [successful, setSuccessful] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
@@ -70,7 +69,7 @@ const Register: React.FC = () => {
 
   return (
     <>
-      <Header user={currentUser} />
+      <Header />
       <div className="col-md-12 flex justify-center align-middle w-full py-12 mx-auto">
         <div className="card card-container shadow-lg col-sm-8 mx-auto  p-12 bg-slate-100">
           <img

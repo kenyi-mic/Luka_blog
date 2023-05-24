@@ -7,7 +7,7 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <Header user={currentUser} />
+      <Header />
       <div className="container mx-auto px-4 py-8 my-8">
         <header className="text-2xl font-bold my-4">
           <h3 className="text-gray-600 text-xl font-bold uppercase">

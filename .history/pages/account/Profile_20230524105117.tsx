@@ -7,9 +7,9 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <Header user={currentUser} />
-      <div className="container mx-auto px-4 py-8 my-8">
-        <header className="text-2xl font-bold my-4">
+      <Header />
+      <div className="container mx-auto px-4 py-8">
+        <header className="text-2xl font-bold my-8">
           <h3 className="text-gray-600 text-xl font-bold uppercase">
             <strong>{`${currentUser?.result.username}'s`}</strong> Profile
           </h3>
@@ -25,7 +25,7 @@ const Profile: React.FC = () => {
           <strong>Email:</strong> {currentUser?.result.email}
         </p>
         <p>
-          <strong>Role: </strong>
+          <strong>Role:</strong>
           {`Author`}
         </p>
       </div>
