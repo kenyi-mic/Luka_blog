@@ -7,7 +7,7 @@ import {
 } from "../utils/localstorage";
 
 function Header() {
-  const currentUser = getLocalStorageItem("user");
+  const currentUser = getLocalStorageItem;
   const isSignedIn = !!currentUser;
 
   return (

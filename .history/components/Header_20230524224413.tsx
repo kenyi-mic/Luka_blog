@@ -1,13 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { logout } from "../services/auth.service";
-import {
-  getLocalStorageItem,
-  setLocalStorageItem,
-} from "../utils/localstorage";
 
 function Header() {
-  const currentUser = getLocalStorageItem("user");
+  const currentUser = JSON.parse(window.localStorage.getItem("user") || "{}");
   const isSignedIn = !!currentUser;
 
   return (
